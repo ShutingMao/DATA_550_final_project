@@ -13,3 +13,7 @@ table/table1.csv: code/01_make_table1.R derived_data/data_clean.rds
 .PHONY: clean
 clean:
 	rm -f derived_data/*.rds figure/*.png table/*.csv output/* report.html
+
+.PHONY: install
+install:
+	Rscript -e "renv::restore(prompt=FALSE)"
