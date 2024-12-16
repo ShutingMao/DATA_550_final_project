@@ -17,3 +17,9 @@ clean:
 .PHONY: install
 install:
 	Rscript -e "renv::restore(prompt=FALSE)"
+
+docker-build:
+        docker build -t data550_final_image .
+
+docker-run:
+	docker run --rm -v $(PWD)/report:/project/final_report shutingmao/data550_final_image
